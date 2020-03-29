@@ -1,10 +1,7 @@
 package posts;
 
-import constructors.ContribuidorConstructor;
 import constructors.EntidadeConstructor;
-import dataproviders.ContribuidorDataProvider;
-import factories.ContribuidorFactory;
-import factories.EnderecoFactory;
+import dataproviders.EntidadeDataProvider;
 import factories.EntidadeFactory;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
@@ -15,7 +12,7 @@ import static utils.RouteConstants.REGISTER_USER;
 
 public class EntidadePostTest extends BaseTest {
 
-    @Test(groups = {"funcional"})
+    @Test(dataProvider = "OptionalFields", dataProviderClass = EntidadeDataProvider.class, groups = {"funcional"})
     public static void cadastrarEntidadeOK() {
 
         EntidadeConstructor entidade = EntidadeFactory.EntidadeOK();
@@ -29,9 +26,22 @@ public class EntidadePostTest extends BaseTest {
                 statusCode(200);
     }
 
-    @Test(dataProvider = "Required-BlankFields", dataProviderClass = ContribuidorDataProvider.class,
+    @Test(dataProvider = "Required-BlankFields", dataProviderClass = EntidadeDataProvider.class,
             groups = {"funcional"})
     public static void validarCamposObrigatoriosVazio(EntidadeConstructor entidade) {
+
+        given().
+                contentType(ContentType.JSON).
+                body(entidade).
+                when().
+                post(REGISTER_USER).
+                then().log().all().
+                statusCode(400);
+    }
+
+    @Test(dataProvider = "semRequiredFields", dataProviderClass = EntidadeDataProvider.class,
+            groups = {"funcional"})
+    public static void validarCamposObrigatorios(EntidadeConstructor entidade) {
 
         given().
                 contentType(ContentType.JSON).
