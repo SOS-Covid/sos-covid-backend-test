@@ -3,7 +3,7 @@ package utils;
 import org.testng.annotations.BeforeClass;
 
 import static io.restassured.RestAssured.*;
-import static utils.RoutesConstants.URL;
+import static utils.RouteConstants.URL;
 
 public class BaseTest {
 

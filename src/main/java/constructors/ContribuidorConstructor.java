@@ -5,11 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class ContribuidorConstructor {
+    private int id;
     private String email;
     private String password;
     private String cpf_cnpj;
@@ -17,5 +20,7 @@ public class ContribuidorConstructor {
     private String type;
     private String first_name;
     private String last_name;
+    private EnderecoConstructor address;
+    private Boolean status;
 }
 
