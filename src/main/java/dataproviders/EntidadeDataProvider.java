@@ -57,10 +57,15 @@ public class EntidadeDataProvider {
         EntidadeConstructor semParamGroupFinality = EntidadeFactory.EntidadeSemParamGroupFinality();
         EntidadeConstructor semParamAddress = EntidadeFactory.EntidadeSemParamAdress();
         EntidadeConstructor semAddressIncompleto = EntidadeFactory.EntidadeAdressIncompleto();
+        EntidadeConstructor semParamHelpTypes = EntidadeFactory.EntidadeSemParamHelpTypes();
+        EntidadeConstructor semParamServedRegion = EntidadeFactory.EntidadeSemParamServedRegions();
+        EntidadeConstructor semParamPaymentMethods = EntidadeFactory.EntidadeSemParamPaymentMethod();
+        EntidadeConstructor semParamDescription = EntidadeFactory.EntidadeSemParamDescription();
         EntidadeConstructor semParamAcceptDonate = EntidadeFactory.EntidadeSemParamAcceptDonate();
 
         return new Object[][] { {entidadeCompleta}, {semParamSite}, {semParamInstaagram}, {semParamFacebook},
                 {semParamNameOrganization}, {semParamFirstName}, {semParamLastName}, {semParamGroupFinality},
-                {semParamAddress}, {semAddressIncompleto}, {semParamAcceptDonate} };
+                {semParamAddress}, {semAddressIncompleto}, {semParamAcceptDonate}, {semParamHelpTypes},
+                {semParamServedRegion}, {semParamPaymentMethods}, {semParamDescription} };
     }
 }

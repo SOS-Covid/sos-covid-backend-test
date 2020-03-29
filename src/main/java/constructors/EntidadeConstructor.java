@@ -4,12 +4,13 @@ import lombok.*;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class EntidadeConstructor {
-    private int id;
+
     private String email;
     private String password;
     private String cpf_cnpj;
@@ -22,15 +23,12 @@ public class EntidadeConstructor {
     private String first_name;
     private String last_name;
     private String group_finality;
+    private String description;
     private int goal;
-    private EnderecoConstructor address;
-    private AssistenciadoConstructor assisted_entities;
     private Boolean accepted_donate;
-    private Boolean status;
-
-    @Singular
-    private List<String> help_types;
-    @Singular
+    private List<EnderecoConstructor> address;
+    private List<AssistenciadoConstructor> assisted_entities;
     private List<String> served_regions;
+    private List<String> help_types;
+    private List<String> payment_methods;
 }
-
