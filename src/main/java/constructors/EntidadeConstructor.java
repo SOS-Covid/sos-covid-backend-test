@@ -9,7 +9,6 @@ import java.util.List;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class EntidadeConstructor {
-    private int id;
     private String email;
     private String password;
     private String cpf_cnpj;
