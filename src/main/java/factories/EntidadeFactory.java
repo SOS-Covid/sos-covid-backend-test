@@ -3,6 +3,7 @@ package factories;
 import constructors.AssistenciadoConstructor;
 import constructors.EnderecoConstructor;
 import constructors.EntidadeConstructor;
+import constructors.MetodoPagamentoConstructor;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,12 +16,13 @@ public class EntidadeFactory {
     private static String validEmail;
     private static List<String> listHelpTypes = Arrays.asList("Help1", "Help2");
     private static List<String> listServedRegion = Arrays.asList("Region 1", "Region 2");
-    private static List<String> listPaymentMethod = Arrays.asList("Paypal", "Pagseguro");
+
+    private static EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
+    private static AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
+    private static MetodoPagamentoConstructor metodoPagamento = MetodoPagamentoFactory.PagtoMetodoOK();
 
     public static EntidadeConstructor EntidadeOK() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -38,8 +40,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -47,8 +49,6 @@ public class EntidadeFactory {
     }
 
     public static EntidadeConstructor EntidadeSemParamEmail() {
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 password("teste123").
@@ -65,8 +65,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -75,8 +75,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamPassword() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -93,8 +91,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -103,8 +101,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamType() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -121,8 +117,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -131,8 +127,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamLastName() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -149,8 +143,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -159,8 +153,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamNameOrganization() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -177,8 +169,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -187,8 +179,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamCpfCnpj() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -205,8 +195,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -215,8 +205,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamPhone1() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -233,8 +221,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -243,8 +231,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamSite() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -261,8 +247,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -271,8 +257,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamInstagram() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -289,8 +273,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -299,8 +283,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamFacebook() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -317,8 +299,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -327,8 +309,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamGroupFinality() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -345,8 +325,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -355,8 +335,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamAcceptDonate() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -374,8 +352,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 build();
@@ -383,8 +361,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamStatus() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -402,8 +378,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -412,8 +388,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamFirstName() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -430,8 +404,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -440,8 +414,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamAdress() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -459,8 +431,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -470,7 +442,6 @@ public class EntidadeFactory {
     public static EntidadeConstructor EntidadeAdressIncompleto() {
         validEmail = generateValidEmail();
         EnderecoConstructor endereco = EnderecoFactory.EnderecoIcompleto();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -488,8 +459,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -498,8 +469,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamHelpTypes() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -516,8 +485,8 @@ public class EntidadeFactory {
                 group_finality("Teste").
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -526,8 +495,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamServedRegions() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -545,7 +512,7 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                payment_methods(listPaymentMethod).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -554,8 +521,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamAssitedEntities() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -573,8 +538,8 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 accepted_donate(Boolean.TRUE).
                 build();
@@ -582,8 +547,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamPaymentMethod() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -601,7 +564,7 @@ public class EntidadeFactory {
                 description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
+                served_region(listServedRegion).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).
@@ -610,8 +573,6 @@ public class EntidadeFactory {
 
     public static EntidadeConstructor EntidadeSemParamDescription() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-        AssistenciadoConstructor assistenciado = AssistenciadoFactory.AssistenciadoCompleto();
 
         return EntidadeConstructor.builder().
                 email(validEmail).
@@ -628,8 +589,8 @@ public class EntidadeFactory {
                 group_finality("Teste").
                 goal(20).
                 help_types(listHelpTypes).
-                served_regions(listServedRegion).
-                payment_methods(listPaymentMethod).
+                served_region(listServedRegion).
+                payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
                 assisted_entities(Arrays.asList(assistenciado)).
                 accepted_donate(Boolean.TRUE).

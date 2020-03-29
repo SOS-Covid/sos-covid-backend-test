@@ -48,24 +48,25 @@ public class EntidadeDataProvider {
     public static Object[][] dataProviderOptionalFields()
     {
         EntidadeConstructor entidadeCompleta = EntidadeFactory.EntidadeOK();
-        EntidadeConstructor semParamSite = EntidadeFactory.EntidadeSemParamSite();
-        EntidadeConstructor semParamInstaagram = EntidadeFactory.EntidadeSemParamInstagram();
-        EntidadeConstructor semParamFacebook = EntidadeFactory.EntidadeSemParamFacebook();
-        EntidadeConstructor semParamNameOrganization = EntidadeFactory.EntidadeSemParamNameOrganization();
-        EntidadeConstructor semParamFirstName = EntidadeFactory.EntidadeSemParamFirstName();
-        EntidadeConstructor semParamLastName = EntidadeFactory.EntidadeSemParamLastName();
-        EntidadeConstructor semParamGroupFinality = EntidadeFactory.EntidadeSemParamGroupFinality();
-        EntidadeConstructor semParamAddress = EntidadeFactory.EntidadeSemParamAdress();
-        EntidadeConstructor semAddressIncompleto = EntidadeFactory.EntidadeAdressIncompleto();
-        EntidadeConstructor semParamHelpTypes = EntidadeFactory.EntidadeSemParamHelpTypes();
-        EntidadeConstructor semParamServedRegion = EntidadeFactory.EntidadeSemParamServedRegions();
-        EntidadeConstructor semParamPaymentMethods = EntidadeFactory.EntidadeSemParamPaymentMethod();
-        EntidadeConstructor semParamDescription = EntidadeFactory.EntidadeSemParamDescription();
-        EntidadeConstructor semParamAcceptDonate = EntidadeFactory.EntidadeSemParamAcceptDonate();
+//        EntidadeConstructor semParamSite = EntidadeFactory.EntidadeSemParamSite();
+//        EntidadeConstructor semParamInstaagram = EntidadeFactory.EntidadeSemParamInstagram();
+//        EntidadeConstructor semParamFacebook = EntidadeFactory.EntidadeSemParamFacebook();
+//        EntidadeConstructor semParamNameOrganization = EntidadeFactory.EntidadeSemParamNameOrganization();
+//        EntidadeConstructor semParamFirstName = EntidadeFactory.EntidadeSemParamFirstName();
+//        EntidadeConstructor semParamLastName = EntidadeFactory.EntidadeSemParamLastName();
+//        EntidadeConstructor semParamGroupFinality = EntidadeFactory.EntidadeSemParamGroupFinality();
+//        EntidadeConstructor semParamAddress = EntidadeFactory.EntidadeSemParamAdress();
+//        EntidadeConstructor semAddressIncompleto = EntidadeFactory.EntidadeAdressIncompleto();
+//        EntidadeConstructor semParamHelpTypes = EntidadeFactory.EntidadeSemParamHelpTypes();
+//        EntidadeConstructor semParamServedRegion = EntidadeFactory.EntidadeSemParamServedRegions();
+//        EntidadeConstructor semParamPaymentMethods = EntidadeFactory.EntidadeSemParamPaymentMethod();
+//        EntidadeConstructor semParamDescription = EntidadeFactory.EntidadeSemParamDescription();
+//        EntidadeConstructor semParamAcceptDonate = EntidadeFactory.EntidadeSemParamAcceptDonate();
 
-        return new Object[][] { {entidadeCompleta}, {semParamSite}, {semParamInstaagram}, {semParamFacebook},
-                {semParamNameOrganization}, {semParamFirstName}, {semParamLastName}, {semParamGroupFinality},
-                {semParamAddress}, {semAddressIncompleto}, {semParamAcceptDonate}, {semParamHelpTypes},
-                {semParamServedRegion}, {semParamPaymentMethods}, {semParamDescription} };
+        return new Object[][] { {entidadeCompleta}};
+//                {semParamSite}, {semParamInstaagram}, {semParamFacebook}, , {semAddressIncompleto}
+//                {semParamNameOrganization}, {semParamFirstName}, {semParamLastName}, {semParamGroupFinality},
+//                {semParamAddress}, {semParamAcceptDonate}, {semParamHelpTypes},
+//                {semParamServedRegion}, {semParamPaymentMethods}, {semParamDescription} };
     }
 }

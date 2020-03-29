@@ -27,7 +27,7 @@ public class EntidadeConstructor {
     private Boolean accepted_donate;
     private List<EnderecoConstructor> address;
     private List<AssistenciadoConstructor> assisted_entities;
-    private List<String> served_regions;
+    private List<String> served_region;
     private List<String> help_types;
-    private List<String> payment_methods;
+    private List<MetodoPagamentoConstructor> payment_methods;
 }
