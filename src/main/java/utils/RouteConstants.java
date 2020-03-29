@@ -6,4 +6,5 @@ public class RouteConstants {
 
     public static final String REGISTER_USER = "/user/register";
     public static final String GET_CONTRIBUIDOR = "/user/find/contributor";
+    public static final String GET_ORGANIZACAO = "/user/find/organization";
 }
