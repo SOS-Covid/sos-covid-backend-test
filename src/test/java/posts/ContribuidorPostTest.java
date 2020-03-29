@@ -26,6 +26,20 @@ public class ContribuidorPostTest extends BaseTest {
     }
 
     @Test(groups = {"funcional"})
+    public static void cadastrarContribuidorMultiEnderecosOK() {
+
+        ContribuidorConstructor contribuidor = ContribuidorFactory.ContribuidorMultiEnderecosOK();
+
+        given().
+                contentType(ContentType.JSON).
+                body(contribuidor).
+                when().
+                post(REGISTER_USER).
+                then().
+                statusCode(200);
+    }
+
+    @Test(groups = {"funcional"})
     public static void cadastrarContribuidorCpfCnpjVazio() {
 
         ContribuidorConstructor contribuidor = ContribuidorFactory.ContribuidorCpfCnpjVazio();

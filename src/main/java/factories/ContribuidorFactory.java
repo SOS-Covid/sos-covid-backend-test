@@ -28,6 +28,25 @@ public class ContribuidorFactory {
                 build();
     }
 
+    public static ContribuidorConstructor ContribuidorMultiEnderecosOK() {
+        Random r = new Random();
+        int x = r.nextInt();
+
+        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
+
+        return ContribuidorConstructor.builder().
+                email("teste" + Integer.toString(x) + "@teste.com").
+                password("teste123").
+                cpf_cnpj("029234344334").
+                phone1("51 33333333").
+                type(CONTRIBUIDOR).
+                first_name("Teste A").
+                last_name("Teste B").
+                address(endereco).
+                address(endereco).
+                status(Boolean.TRUE).
+                build();
+    }
 
     public static ContribuidorConstructor ContribuidorSemParamEmail() {
         Random r = new Random();
