@@ -2,7 +2,7 @@ package posts;
 
 import constructors.EntidadeConstructor;
 import dataproviders.EntidadeDataProvider;
-import factories.EntidadeFactory;
+import groovy.util.logging.Slf4j;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import utils.BaseTest;
@@ -12,10 +12,9 @@ import static utils.RouteConstants.REGISTER_USER;
 
 public class EntidadePostTest extends BaseTest {
 
-    @Test(dataProvider = "OptionalFields", dataProviderClass = EntidadeDataProvider.class, groups = {"funcional"})
-    public static void cadastrarEntidadeOK() {
-
-        EntidadeConstructor entidade = EntidadeFactory.EntidadeOK();
+    @Test(dataProvider = "OptionalFields", dataProviderClass = EntidadeDataProvider.class,
+            groups = {"funcional"})
+    public static void cadastrarEntidadeOK(EntidadeConstructor entidade) {
 
         given().
                 contentType(ContentType.JSON).
