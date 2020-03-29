@@ -16,4 +16,14 @@ public class EnderecoFactory {
                 postal_code("98430999").
                 build();
     }
+
+    public static EnderecoConstructor EnderecoIcompleto() {
+        return EnderecoConstructor.builder().
+                street("Rua Test").
+                number(123).
+                complement("ABC").
+                district("Centro").
+                city("Porto Alegre").
+                build();
+    }
 }

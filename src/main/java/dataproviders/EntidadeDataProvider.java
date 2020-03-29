@@ -32,4 +32,35 @@ public class EntidadeDataProvider {
         return new Object[][] { {semEmail}, {emailInvalido}, {semPassword}, {passwordInvalido}, {semType},
                 {typeInvalido}, {semCpf}, {cpfInvalido}, {semTelefone}};
     }
+
+    @DataProvider(name = "semRequiredFields")
+    public static Object[][] dataProviderSemRequiredFields()
+    {
+        EntidadeConstructor semParamEmail = EntidadeFactory.EntidadeSemParamEmail();
+        EntidadeConstructor semParamPassword = EntidadeFactory.EntidadeSemParamPassword();
+        EntidadeConstructor semParamType = EntidadeFactory.EntidadeSemParamType();
+        EntidadeConstructor semParamCpf = EntidadeFactory.EntidadeSemParamCpfCnpj();
+
+        return new Object[][] { {semParamEmail}, {semParamPassword}, {semParamType}, {semParamCpf} };
+    }
+
+    @DataProvider(name = "OptionalFields")
+    public static Object[][] dataProviderOptionalFields()
+    {
+        EntidadeConstructor entidadeCompleta = EntidadeFactory.EntidadeOK();
+        EntidadeConstructor semParamSite = EntidadeFactory.EntidadeSemParamSite();
+        EntidadeConstructor semParamInstaagram = EntidadeFactory.EntidadeSemParamInstagram();
+        EntidadeConstructor semParamFacebook = EntidadeFactory.EntidadeSemParamFacebook();
+        EntidadeConstructor semParamNameOrganization = EntidadeFactory.EntidadeSemParamNameOrganization();
+        EntidadeConstructor semParamFirstName = EntidadeFactory.EntidadeSemParamFirstName();
+        EntidadeConstructor semParamLastName = EntidadeFactory.EntidadeSemParamLastName();
+        EntidadeConstructor semParamGroupFinality = EntidadeFactory.EntidadeSemParamGroupFinality();
+        EntidadeConstructor semParamAddress = EntidadeFactory.EntidadeSemParamAdress();
+        EntidadeConstructor semAddressIncompleto = EntidadeFactory.EntidadeAdressIncompleto();
+        EntidadeConstructor semParamAcceptDonate = EntidadeFactory.EntidadeSemParamAcceptDonate();
+
+        return new Object[][] { {entidadeCompleta}, {semParamSite}, {semParamInstaagram}, {semParamFacebook},
+                {semParamNameOrganization}, {semParamFirstName}, {semParamLastName}, {semParamGroupFinality},
+                {semParamAddress}, {semAddressIncompleto}, {semParamAcceptDonate} };
+    }
 }
