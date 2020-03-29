@@ -21,7 +21,7 @@ public class ContribuidorPostTest extends BaseTest {
                 body(contribuidor).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(200);
     }
 
@@ -35,7 +35,7 @@ public class ContribuidorPostTest extends BaseTest {
                 body(contribuidor).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(200);
     }
 
@@ -49,7 +49,7 @@ public class ContribuidorPostTest extends BaseTest {
                 body(contribuidor).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -63,21 +63,21 @@ public class ContribuidorPostTest extends BaseTest {
                 body(contribuidor).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
     @Test(groups = {"funcional"})
-    public static void cadastrarContribuidorInativo() {
+    public static void cadastrarContribuidorStatusAtivo() {
 
-        ContribuidorConstructor contribuidor = ContribuidorFactory.ContribuidorInativo();
+        ContribuidorConstructor contribuidor = ContribuidorFactory.ContribuidorStatusAtivo();
 
         given().
                 contentType(ContentType.JSON).
                 body(contribuidor).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -91,7 +91,7 @@ public class ContribuidorPostTest extends BaseTest {
                 body(contribuidor).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -105,7 +105,7 @@ public class ContribuidorPostTest extends BaseTest {
                 body(contribuidor).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -119,7 +119,20 @@ public class ContribuidorPostTest extends BaseTest {
                 body(contribuidor).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
+                statusCode(500);
+    }
+
+    public static void cadastrarContribuidorSemParamStatus() {
+
+        ContribuidorConstructor contribuidor = ContribuidorFactory.ContribuidorSemParamStatus();
+
+        given().
+                contentType(ContentType.JSON).
+                body(contribuidor).
+                when().
+                post(REGISTER_USER).
+                then().log().all().
                 statusCode(500);
     }
 }

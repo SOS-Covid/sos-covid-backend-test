@@ -24,7 +24,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(200);
     }
 
@@ -38,7 +38,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -52,7 +52,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -66,7 +66,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -80,7 +80,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -94,7 +94,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -108,7 +108,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -122,7 +122,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -136,7 +136,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -150,7 +150,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -164,7 +164,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -178,7 +178,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -192,7 +192,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -206,7 +206,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -220,7 +220,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -234,7 +234,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -248,7 +248,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -262,7 +262,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -276,7 +276,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -290,7 +290,7 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
                 statusCode(500);
     }
 
@@ -304,7 +304,21 @@ public class EntidadePostTest extends BaseTest {
                 body(entidade).
                 when().
                 post(REGISTER_USER).
-                then().
+                then().log().all().
+                statusCode(500);
+    }
+
+    @Test(groups = {"funcional"})
+    public static void cadastrarEntidadeSemParamStatus() {
+
+        EntidadeConstructor entidade = EntidadeFactory.EntidadeSemParamStatus();
+
+        given().
+                contentType(ContentType.JSON).
+                body(entidade).
+                when().
+                post(REGISTER_USER).
+                then().log().all().
                 statusCode(500);
     }
 }
