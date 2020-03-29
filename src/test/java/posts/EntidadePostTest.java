@@ -1,10 +1,7 @@
 package posts;
 
-import constructors.ContribuidorConstructor;
 import constructors.EntidadeConstructor;
-import dataproviders.ContribuidorDataProvider;
-import factories.ContribuidorFactory;
-import factories.EnderecoFactory;
+import dataproviders.EntidadeDataProvider;
 import factories.EntidadeFactory;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
@@ -29,7 +26,7 @@ public class EntidadePostTest extends BaseTest {
                 statusCode(200);
     }
 
-    @Test(dataProvider = "Required-BlankFields", dataProviderClass = ContribuidorDataProvider.class,
+    @Test(dataProvider = "Required-BlankFields", dataProviderClass = EntidadeDataProvider.class,
             groups = {"funcional"})
     public static void validarCamposObrigatoriosVazio(EntidadeConstructor entidade) {
 

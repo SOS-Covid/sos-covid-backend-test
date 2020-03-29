@@ -1,6 +1,7 @@
 package posts;
 
 import constructors.ContribuidorConstructor;
+import dataproviders.ContribuidorDataProvider;
 import factories.ContribuidorFactory;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
@@ -29,6 +30,7 @@ public class ContribuidorPostTest extends BaseTest {
     public static void cadastrarContribuidorMultiEnderecosOK() {
 
         ContribuidorConstructor contribuidor = ContribuidorFactory.ContribuidorMultiEnderecosOK();
+        System.out.println(contribuidor);
 
         given().
                 contentType(ContentType.JSON).
@@ -37,34 +39,6 @@ public class ContribuidorPostTest extends BaseTest {
                 post(REGISTER_USER).
                 then().log().all().
                 statusCode(200);
-    }
-
-    @Test(groups = {"funcional"})
-    public static void cadastrarContribuidorCpfCnpjVazio() {
-
-        ContribuidorConstructor contribuidor = ContribuidorFactory.ContribuidorCpfCnpjVazio();
-
-        given().
-                contentType(ContentType.JSON).
-                body(contribuidor).
-                when().
-                post(REGISTER_USER).
-                then().log().all().
-                statusCode(500);
-    }
-
-    @Test(groups = {"funcional"})
-    public static void cadastrarContribuidorEmailVazio() {
-
-        ContribuidorConstructor contribuidor = ContribuidorFactory.ContribuidorEmailVazio();
-
-        given().
-                contentType(ContentType.JSON).
-                body(contribuidor).
-                when().
-                post(REGISTER_USER).
-                then().log().all().
-                statusCode(500);
     }
 
     @Test(groups = {"funcional"})
@@ -78,35 +52,7 @@ public class ContribuidorPostTest extends BaseTest {
                 when().
                 post(REGISTER_USER).
                 then().log().all().
-                statusCode(500);
-    }
-
-    @Test(groups = {"funcional"})
-    public static void cadastrarContribuidorMaskEmailInvalida() {
-
-        ContribuidorConstructor contribuidor = ContribuidorFactory.ContribuidorMaskEmailInvalida();
-
-        given().
-                contentType(ContentType.JSON).
-                body(contribuidor).
-                when().
-                post(REGISTER_USER).
-                then().log().all().
-                statusCode(500);
-    }
-
-    @Test(groups = {"funcional"})
-    public static void cadastrarContribuidorPhoneVazio() {
-
-        ContribuidorConstructor contribuidor = ContribuidorFactory.ContribuidorPhoneVazio();
-
-        given().
-                contentType(ContentType.JSON).
-                body(contribuidor).
-                when().
-                post(REGISTER_USER).
-                then().log().all().
-                statusCode(500);
+                statusCode(400);
     }
 
     @Test(groups = {"funcional"})
@@ -120,12 +66,12 @@ public class ContribuidorPostTest extends BaseTest {
                 when().
                 post(REGISTER_USER).
                 then().log().all().
-                statusCode(500);
+                statusCode(400);
     }
 
-    public static void cadastrarContribuidorSemParamStatus() {
-
-        ContribuidorConstructor contribuidor = ContribuidorFactory.ContribuidorSemParamStatus();
+    @Test(dataProvider = "Required-BlankFields", dataProviderClass = ContribuidorDataProvider.class,
+            groups = {"funcional"})
+    public static void validarCamposObrigatoriosVazio(ContribuidorConstructor contribuidor) {
 
         given().
                 contentType(ContentType.JSON).
@@ -133,6 +79,6 @@ public class ContribuidorPostTest extends BaseTest {
                 when().
                 post(REGISTER_USER).
                 then().log().all().
-                statusCode(500);
+                statusCode(400);
     }
 }
