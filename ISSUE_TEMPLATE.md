@@ -1,36 +1,13 @@
-# Bug Report
+## Issue
 
-### Descrição:
+#### A sua Issue é relacionada a um problema? Por favor, descreva:
+Uma clara e concisa descrição de qual é o problema. Ex.: Eu não gosto quando...
 
-<!-- A clear and concise description of what the bug is. -->
+#### Descreva a solução que você gostaria:
+Uma clara e concisa descrição de o que você gostaria que acontecesse.
 
-## Comportamento Atual:
+#### Descreva alternativas que voce considerou:
+Uma clara e concisa descrição de qualquer solução alternativa, ou Issue que você considerou.
 
-<!-- What actually happens with SCREENSHOT, if applicable -->
-
-## Comportamento Esperado:
-
-<!-- What you expect to happen -->
-
-## Passo a passo para reprodução da falha:
-
-1. <!-- Go to '...' -->
-2. <!-- Click on '....' -->
-3. <!-- and so on... -->
-
-### Contexto:
-
-Informações relevantes com relação as suas configurações, que podem nos facilitar a reproduzir a falha, por exemplo:
-
-- Sistema Operacional,
-- Versão do Browser, 
-- End-Point,
-- Etc...
-
-### Informações Adicionais
-
-<!-- Add any other context about the problem here. -->
-
-### Logs de Erro / StackTrace's:
-
-<!-- Logs from both SERVER and BROWSER -->
+#### Informações adicionais:
+Adicione qualquer outra informação ou screenshot sobre a feature desejada.
