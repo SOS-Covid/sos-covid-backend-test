@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class ContribuidorConstructor {
-    private int id;
+
     private String email;
     private String password;
     private String cpf_cnpj;
@@ -20,7 +20,6 @@ public class ContribuidorConstructor {
     private String type;
     private String first_name;
     private String last_name;
-    private EnderecoConstructor address;
-    private Boolean status;
+    private List<EnderecoConstructor> address;
 }
 
