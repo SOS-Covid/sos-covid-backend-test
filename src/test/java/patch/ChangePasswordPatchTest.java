@@ -1,4 +1,4 @@
-package posts;
+package patch;
 
 import io.restassured.http.ContentType;
 import utils.BaseTest;

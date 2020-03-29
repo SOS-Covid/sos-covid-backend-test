@@ -1,4 +1,4 @@
-package posts;
+package gets;
 
 import utils.BaseTest;
 
