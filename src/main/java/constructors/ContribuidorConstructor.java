@@ -1,9 +1,10 @@
 package constructors;
 
-import lombok.*;
-import org.testng.annotations.Optional;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -20,6 +21,5 @@ public class ContribuidorConstructor {
     private String first_name;
     private String last_name;
     private List<EnderecoConstructor> address;
-    private Boolean status;
 }
 

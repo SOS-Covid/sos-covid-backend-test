@@ -30,7 +30,6 @@ public class ContribuidorPostTest extends BaseTest {
     public static void cadastrarContribuidorMultiEnderecosOK() {
 
         ContribuidorConstructor contribuidor = ContribuidorFactory.ContribuidorMultiEnderecosOK();
-        System.out.println(contribuidor);
 
         given().
                 contentType(ContentType.JSON).

@@ -3,8 +3,6 @@ package factories;
 import constructors.ContribuidorConstructor;
 import constructors.EnderecoConstructor;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import static utils.UtilConstants.CONTRIBUIDOR;
@@ -27,7 +25,6 @@ public class ContribuidorFactory {
                 first_name("Teste A").
                 last_name("Teste B").
                 address(Arrays.asList(endereco)).
-                status(Boolean.FALSE).
                 build();
     }
 
@@ -44,7 +41,6 @@ public class ContribuidorFactory {
                 first_name("Teste A").
                 last_name("Teste B").
                 address(Arrays.asList(endereco, endereco)).
-                status(Boolean.FALSE).
                 build();
     }
 
@@ -59,7 +55,6 @@ public class ContribuidorFactory {
                 first_name("Teste A").
                 last_name("Teste B").
                 address(Arrays.asList(endereco)).
-                status(Boolean.FALSE).
                 build();
     }
 
@@ -76,7 +71,6 @@ public class ContribuidorFactory {
                 first_name("Teste A").
                 last_name("Teste B").
                 address(Arrays.asList(endereco)).
-                status(Boolean.TRUE).
                 build();
     }
 }
