@@ -1,4 +1,4 @@
-package Get;
+package get;
 
 import org.testng.annotations.Test;
 import utils.BaseTest;
