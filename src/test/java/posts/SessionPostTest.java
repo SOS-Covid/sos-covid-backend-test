@@ -1,20 +1,22 @@
-package patch;
+package posts;
 
 import io.restassured.http.ContentType;
 import utils.BaseTest;
 
 import static io.restassured.RestAssured.given;
-import static utils.RouteConstants.*;
+import static utils.RouteConstants.GET_GENERICO;
+import static utils.RouteConstants.POST_SESSION;
 import static utils.UtilConstants.CONTRIBUIDOR;
 import static utils.UtilConstants.ENTIDADE;
+import static utils.UtilsTest.generateValidEmail;
 
-public class ChangePasswordPatchTest extends BaseTest {
+public class SessionPostTest extends BaseTest {
 
-    private static String password = "teste123";
-    private static String newPassword = "teste1234";
+    private static String rightPassword = "teste123";
+    private static String wrongPassword = "xxxxxxx";
 
     //    @Test(groups = {"funcional"})
-    public static void AlterarSenhaContribuidor() {
+    public static void SessionContribuidorOK() {
         String mail = given().
                 queryParam("status", Boolean.TRUE).
                 queryParam("type", CONTRIBUIDOR).
@@ -25,30 +27,10 @@ public class ChangePasswordPatchTest extends BaseTest {
                 extract().
                 path("[0].email");
 
-        String token = given().
-                contentType(ContentType.JSON).
-                param("email", mail).
-                param("password", password).
-                when().
-                post(POST_SESSION).
-                then().log().all().
-                statusCode(200).
-                extract().
-                path("token");
-
-        given().auth().
-                oauth2(token).
-                param("email", mail).
-                param("newPassword", newPassword).
-                when().
-                patch(PATCH_NEW_PASSWORD).
-                then().log().all().
-                statusCode(204);
-
         given().
                 contentType(ContentType.JSON).
                 param("email", mail).
-                param("password", newPassword).
+                param("password", rightPassword).
                 when().
                 post(POST_SESSION).
                 then().log().all().
@@ -56,10 +38,10 @@ public class ChangePasswordPatchTest extends BaseTest {
     }
 
     //    @Test(groups = {"funcional"})
-    public static void AlterarSenhaEntidade() {
+    public static void SessionContribuidorSenhaNOK() {
         String mail = given().
                 queryParam("status", Boolean.TRUE).
-                queryParam("type", ENTIDADE).
+                queryParam("type", CONTRIBUIDOR).
                 when().
                 get(GET_GENERICO).
                 then().log().all().
@@ -67,38 +49,18 @@ public class ChangePasswordPatchTest extends BaseTest {
                 extract().
                 path("[0].email");
 
-        String token = given().
-                contentType(ContentType.JSON).
-                param("email", mail).
-                param("password", password).
-                when().
-                post(POST_SESSION).
-                then().log().all().
-                statusCode(200).
-                extract().
-                path("token");
-
-        given().auth().
-                oauth2(token).
-                param("email", mail).
-                param("newPassword", newPassword).
-                when().
-                patch(PATCH_NEW_PASSWORD).
-                then().log().all().
-                statusCode(204);
-
         given().
                 contentType(ContentType.JSON).
                 param("email", mail).
-                param("password", newPassword).
+                param("password", wrongPassword).
                 when().
                 post(POST_SESSION).
                 then().log().all().
-                statusCode(200);
+                statusCode(404);
     }
 
     //    @Test(groups = {"funcional"})
-    public static void AlterarSenhaTokenInvalido() {
+    public static void SessionEntidadeOK() {
         String mail = given().
                 queryParam("status", Boolean.TRUE).
                 queryParam("type", ENTIDADE).
@@ -110,12 +72,48 @@ public class ChangePasswordPatchTest extends BaseTest {
                 path("[0].email");
 
         given().
+                contentType(ContentType.JSON).
                 param("email", mail).
-                param("newPassword", newPassword).
+                param("password", rightPassword).
                 when().
-                patch(PATCH_NEW_PASSWORD).
+                post(POST_SESSION).
                 then().log().all().
-                statusCode(403);
+                statusCode(200);
     }
 
+    //    @Test(groups = {"funcional"})
+    public static void SessionEntidadeSenhaNOK() {
+        String mail = given().
+                queryParam("status", Boolean.TRUE).
+                queryParam("type", ENTIDADE).
+                when().
+                get(GET_GENERICO).
+                then().log().all().
+                statusCode(200).
+                extract().
+                path("[0].email");
+
+        given().
+                contentType(ContentType.JSON).
+                param("email", mail).
+                param("password", wrongPassword).
+                when().
+                post(POST_SESSION).
+                then().log().all().
+                statusCode(404);
+    }
+
+    //    @Test(groups = {"funcional"})
+    public static void SessionEmailNOK() {
+        String mail = generateValidEmail();
+
+        given().
+                contentType(ContentType.JSON).
+                param("email", mail).
+                param("password", rightPassword).
+                when().
+                post(POST_SESSION).
+                then().log().all().
+                statusCode(404);
+    }
 }
