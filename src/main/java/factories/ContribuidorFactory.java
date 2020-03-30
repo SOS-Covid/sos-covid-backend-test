@@ -11,10 +11,11 @@ import static utils.UtilsTest.generateValidEmail;
 public class ContribuidorFactory {
 
     private static String validEmail;
+    private static EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
+    private static EnderecoConstructor enderecoInvalido = EnderecoFactory.EnderecoOK();
 
     public static ContribuidorConstructor ContribuidorOK() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
 
         return ContribuidorConstructor.builder().
                 email(validEmail).
@@ -30,8 +31,6 @@ public class ContribuidorFactory {
 
     public static ContribuidorConstructor ContribuidorMultiEnderecosOK() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
-
         return ContribuidorConstructor.builder().
                 email(validEmail).
                 password("teste123").
@@ -45,7 +44,6 @@ public class ContribuidorFactory {
     }
 
     public static ContribuidorConstructor ContribuidorSemParamEmail() {
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
 
         return ContribuidorConstructor.builder().
                 password("teste123").
@@ -58,9 +56,64 @@ public class ContribuidorFactory {
                 build();
     }
 
+    public static ContribuidorConstructor ContribuidorSemParamPassword() {
+        validEmail = generateValidEmail();
+
+        return ContribuidorConstructor.builder().
+                email(validEmail).
+                cpf_cnpj("029234344334").
+                phone1("51 33333333").
+                type(CONTRIBUIDOR).
+                first_name("Teste A").
+                last_name("Teste B").
+                address(Arrays.asList(endereco)).
+                build();
+    }
+
+    public static ContribuidorConstructor ContribuidorSemParamType() {
+        validEmail = generateValidEmail();
+
+        return ContribuidorConstructor.builder().
+                email(validEmail).
+                password("teste123").
+                cpf_cnpj("029234344334").
+                phone1("51 33333333").
+                first_name("Teste A").
+                last_name("Teste B").
+                address(Arrays.asList(endereco)).
+                build();
+    }
+
+    public static ContribuidorConstructor ContribuidorSemParamCpfCnpj() {
+        validEmail = generateValidEmail();
+
+        return ContribuidorConstructor.builder().
+                email(validEmail).
+                password("teste123").
+                phone1("51 33333333").
+                type(CONTRIBUIDOR).
+                first_name("Teste A").
+                last_name("Teste B").
+                address(Arrays.asList(endereco)).
+                build();
+    }
+
+    public static ContribuidorConstructor ContribuidorSemParamPhone1() {
+        validEmail = generateValidEmail();
+
+        return ContribuidorConstructor.builder().
+                email(validEmail).
+                password("teste123").
+                cpf_cnpj("029234344334").
+                type(CONTRIBUIDOR).
+                first_name("Teste A").
+                last_name("Teste B").
+                address(Arrays.asList(endereco)).
+                build();
+    }
+
     public static ContribuidorConstructor ContribuidorStatusAtivo() {
         validEmail = generateValidEmail();
-        EnderecoConstructor endereco = EnderecoFactory.EnderecoOK();
 
         return ContribuidorConstructor.builder().
                 email(validEmail).
@@ -71,6 +124,49 @@ public class ContribuidorFactory {
                 first_name("Teste A").
                 last_name("Teste B").
                 address(Arrays.asList(endereco)).
+                build();
+    }
+
+    public static ContribuidorConstructor ContribuidorSemParamFirstName() {
+        validEmail = generateValidEmail();
+
+        return ContribuidorConstructor.builder().
+                email(validEmail).
+                password("teste123").
+                cpf_cnpj("029234344334").
+                phone1("51 33333333").
+                type(CONTRIBUIDOR).
+                last_name("Teste B").
+                address(Arrays.asList(endereco)).
+                build();
+    }
+
+    public static ContribuidorConstructor ContribuidorSemParamLastName() {
+        validEmail = generateValidEmail();
+
+        return ContribuidorConstructor.builder().
+                email(validEmail).
+                password("teste123").
+                cpf_cnpj("029234344334").
+                phone1("51 33333333").
+                type(CONTRIBUIDOR).
+                first_name("Teste A").
+                address(Arrays.asList(endereco)).
+                build();
+    }
+
+    public static ContribuidorConstructor ContribuidorEnderecoInvalido() {
+        validEmail = generateValidEmail();
+
+        return ContribuidorConstructor.builder().
+                email(validEmail).
+                password("teste123").
+                cpf_cnpj("029234344334").
+                phone1("51 33333333").
+                type(CONTRIBUIDOR).
+                first_name("Teste A").
+                last_name("Teste B").
+                address(Arrays.asList(enderecoInvalido)).
                 build();
     }
 }
