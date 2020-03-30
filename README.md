@@ -6,7 +6,7 @@ Projeto de Automação do sos-covid-backend
 ## Descrição :page_facing_up:
 Este projeto tem o intuido de validar os end-points do back-end do site Cooperação Solidária.
 
-## O projeto Cooperação Solidária :bulb:
+## O Projeto Cooperação Solidária :bulb:
 
 Muitas pessoas e famílias inteiras estão passando por dificuldades com as restrições impostas pela pandemia do COVID-19. O isolamento social é necessário, mas com isso os empregos, atividades autônomas e informais são afetados, impossibilitando muitos de ganhar o próprio sustento. Isso restringe seus acessos ao que há de mais básico: alimentação e itens higiene.
 
