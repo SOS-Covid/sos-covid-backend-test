@@ -8,6 +8,12 @@ public class ContribuidorDataProvider {
 
     @DataProvider(name = "Required-BlankFields")
     public static Object[][] dataProviderRequiredBlankFields() {
+        ContribuidorConstructor semParamEmail = ContribuidorFactory.ContribuidorSemParamEmail();
+        ContribuidorConstructor semParamPassword = ContribuidorFactory.ContribuidorSemParamPassword();
+        ContribuidorConstructor semParamType = ContribuidorFactory.ContribuidorSemParamType();
+        ContribuidorConstructor semParamCpfCnpj = ContribuidorFactory.ContribuidorSemParamCpfCnpj();
+        ContribuidorConstructor semParamPhone1 = ContribuidorFactory.ContribuidorSemParamPhone1();
+        ContribuidorConstructor statusAtivo = ContribuidorFactory.ContribuidorStatusAtivo();
         ContribuidorConstructor semEmail = ContribuidorFactory.ContribuidorOK();
         ContribuidorConstructor emailInvalido = ContribuidorFactory.ContribuidorOK();
         ContribuidorConstructor semPassword = ContribuidorFactory.ContribuidorOK();
@@ -31,8 +37,20 @@ public class ContribuidorDataProvider {
         firstNameInvalido.setFirst_name("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce purus quam, rhoncus in efficitur eget, commodo quis justo. Aenean quis porta nisl. Proin posuere scelerisque justo, non rhoncus orci sed.");
         lastNameInvalido.setFirst_name("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce purus quam, rhoncus in efficitur eget, commodo quis justo. Aenean quis porta nisl. Proin posuere scelerisque justo, non rhoncus orci sed.");
 
-
         return new Object[][]{{semEmail}, {emailInvalido}, {semPassword}, {passwordInvalido}, {semType},
-                {typeInvalido}, {semCpf}, {cpfInvalido}, {semTelefone}, {firstNameInvalido}, {lastNameInvalido}};
+                {typeInvalido}, {semCpf}, {cpfInvalido}, {semTelefone}, {firstNameInvalido}, {lastNameInvalido},
+                {semParamEmail}, {semParamPassword}, {semParamType}, {semParamCpfCnpj}, {semParamPhone1}, {statusAtivo}};
+    }
+
+    @DataProvider(name = "OptionalFields")
+    public static Object[][] dataProviderOptionalFields() {
+        ContribuidorConstructor contribuidorOK = ContribuidorFactory.ContribuidorOK();
+        ContribuidorConstructor contribuidorMultiEnderecoOK = ContribuidorFactory.ContribuidorMultiEnderecosOK();
+        ContribuidorConstructor SemParamFirstName = ContribuidorFactory.ContribuidorSemParamFirstName();
+        ContribuidorConstructor SemParamLastName = ContribuidorFactory.ContribuidorSemParamLastName();
+        ContribuidorConstructor enderecoInvalido = ContribuidorFactory.ContribuidorEnderecoInvalido();
+
+        return new Object[][]{{contribuidorOK}, {contribuidorMultiEnderecoOK}, {SemParamFirstName},
+                {SemParamLastName}, {enderecoInvalido}};
     }
 }
