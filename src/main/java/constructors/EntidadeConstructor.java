@@ -5,11 +5,11 @@ import lombok.*;
 
 import java.util.List;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @Builder
-@Setter
+@Data
 @AllArgsConstructor
 @RequiredArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class EntidadeConstructor {
     private String email;
     private String password;
