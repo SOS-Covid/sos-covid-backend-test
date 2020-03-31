@@ -4,7 +4,7 @@ Projeto de Automação do [sos-covid-backend](https://github.com/SOS-Covid/sos-c
 [![Actions Status](https://github.com/SOS-Covid/sos-covid-backend-test/workflows/CI/badge.svg)](https://github.com/SOS-Covid/sos-covid-backend-test/actions)
 
 ## Descrição :page_facing_up:
-Este projeto tem o intuido de validar os end-points do back-end do site Cooperação Solidária.
+Este projeto tem o intuido de validar os end-points do back-end do site [Cooperação Solidária](https://www.cooperacaosolidaria.com.br).
 
 ## O Projeto Cooperação Solidária :bulb:
 
