@@ -2,17 +2,18 @@ package posts;
 
 import constructors.EntidadeConstructor;
 import dataproviders.EntidadeDataProvider;
-import groovy.util.logging.Slf4j;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import utils.BaseTest;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
+import static utils.RouteConstants.DELETE_USER;
 import static utils.RouteConstants.REGISTER_USER;
 
 public class EntidadePostTest extends BaseTest {
 
-    @Test(dataProvider = "OptionalFields", dataProviderClass = EntidadeDataProvider.class,
+    @Test(dataProvider = "Complete", dataProviderClass = EntidadeDataProvider.class,
             groups = {"funcional"})
     public static void cadastrarEntidadeOK(EntidadeConstructor entidade) {
 
@@ -23,6 +24,29 @@ public class EntidadePostTest extends BaseTest {
                 post(REGISTER_USER).
                 then().log().all().
                 statusCode(200);
+
+        when().
+                delete(DELETE_USER + entidade.getEmail()).
+                then().log().all().
+                statusCode(204);
+    }
+
+    @Test(dataProvider = "OptionalFields", dataProviderClass = EntidadeDataProvider.class,
+            groups = {"funcional"})
+    public static void cadastrarEntidadeOptionalFields(EntidadeConstructor entidade) {
+
+        given().
+                contentType(ContentType.JSON).
+                body(entidade).
+                when().
+                post(REGISTER_USER).
+                then().log().all().
+                statusCode(200);
+
+        when().
+                delete(DELETE_USER + entidade.getEmail()).
+                then().log().all().
+                statusCode(204);
     }
 
     @Test(dataProvider = "Required-BlankFields", dataProviderClass = EntidadeDataProvider.class,

@@ -5,8 +5,7 @@ import utils.BaseTest;
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
 import static org.testng.Assert.assertTrue;
-import static utils.RouteConstants.GET_GENERICO;
-import static utils.RouteConstants.PATCH_NEW_PASSWORD;
+import static utils.RouteConstants.*;
 import static utils.UtilConstants.CONTRIBUIDOR;
 import static utils.UtilConstants.ENTIDADE;
 
@@ -28,7 +27,7 @@ public class ActivateUserGetTest extends BaseTest {
                 path("[0].email");
 
         when().
-                patch(PATCH_NEW_PASSWORD + "/" + mail).
+                get(GET_ACTIVE_USER + "/" + mail).
                 then().log().all().
                 statusCode(404);
 
@@ -57,7 +56,7 @@ public class ActivateUserGetTest extends BaseTest {
                 path("[0].email");
 
         when().
-                patch(PATCH_NEW_PASSWORD + "/" + mail).
+                get(GET_ACTIVE_USER + "/" + mail).
                 then().log().all().
                 statusCode(404);
 
@@ -86,7 +85,7 @@ public class ActivateUserGetTest extends BaseTest {
                 path("[0].email");
 
         when().
-                patch(PATCH_NEW_PASSWORD + "/" + mail).
+                get(GET_ACTIVE_USER + "/" + mail).
                 then().log().all().
                 statusCode(404);
 
@@ -115,7 +114,7 @@ public class ActivateUserGetTest extends BaseTest {
                 path("[0].email");
 
         when().
-                patch(PATCH_NEW_PASSWORD + "/" + mail).
+                get(GET_ACTIVE_USER + "/" + mail).
                 then().log().all().
                 statusCode(404);
 

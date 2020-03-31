@@ -7,6 +7,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.equalTo;
 import static utils.RouteConstants.GET_ORGANIZACAO;
+import static utils.RouteConstants.GET_ORGANIZACAO_ALL;
 
 public class EntidadeGetTest extends BaseTest {
 
@@ -17,6 +18,14 @@ public class EntidadeGetTest extends BaseTest {
                get(GET_ORGANIZACAO).
                then().log().all().
                statusCode(200);
+    }
+
+    @Test(groups = {"funcional"})
+    public static void obterTodasEntidadesFullList() {
+        when().
+                get(GET_ORGANIZACAO_ALL).
+                then().log().all().
+                statusCode(200);
     }
 
     @Test(groups = {"funcional"})
