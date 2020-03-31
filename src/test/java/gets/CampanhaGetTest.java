@@ -5,8 +5,7 @@ import utils.BaseTest;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.CoreMatchers.*;
 import static utils.RouteConstants.*;
 
 public class CampanhaGetTest extends BaseTest {
@@ -62,6 +61,22 @@ public class CampanhaGetTest extends BaseTest {
                 body("data[0]._id", notNullValue()).
                 body("data[" + y + "]._id", notNullValue()).
                 body("data[" + x + "]._id", equalTo(null));
+    }
+
+    @Test(groups = {"funcional"})
+    public static void obterCampanhaByEmail() {
+        String mail = when().
+                get(GET_CAMPANHA_ALL).
+                then().log().all().
+                statusCode(200).
+                extract().
+                path("[0].reference_user");
+
+        when().
+                get(GET_CAMPANHA_BY_MAIL + mail).
+                then().log().all().
+                statusCode(200).
+                body("reference_user", hasItem(mail));
     }
 
 }

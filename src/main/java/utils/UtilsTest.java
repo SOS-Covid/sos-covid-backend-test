@@ -4,6 +4,7 @@ import java.util.Random;
 
 import static io.restassured.RestAssured.when;
 import static utils.RouteConstants.GET_ORGANIZACAO;
+import static utils.RouteConstants.GET_ORGANIZACAO_ALL;
 
 public class UtilsTest {
 
@@ -16,7 +17,7 @@ public class UtilsTest {
 
     public static String getOrganizationEmail() {
         return when().
-                get(GET_ORGANIZACAO).
+                get(GET_ORGANIZACAO_ALL).
                 then().log().all().
                 statusCode(200).
                 extract().
