@@ -26,7 +26,7 @@ public class ContribuidorPostTest extends BaseTest {
                 statusCode(200);
 
         when().
-                delete(DELETE_USER + "/" + contribuidor.getEmail()).
+                delete(DELETE_USER + contribuidor.getEmail()).
                 then().log().all().
                 statusCode(204);
     }

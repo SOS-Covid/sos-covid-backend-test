@@ -26,7 +26,7 @@ public class CampanhaPostTest extends BaseTest {
                 statusCode(200);
 
         when().
-                delete(DELETE_CAMPANHA + "/" + campanha.getReference_user()).
+                delete(DELETE_CAMPANHA + campanha.getReference_user()).
                 then().log().all().
                 statusCode(204);
     }

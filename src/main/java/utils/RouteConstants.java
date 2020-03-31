@@ -12,6 +12,9 @@ public class RouteConstants {
     public static final String PATCH_NEW_PASSWORD = "/user/password";
     public static final String GET_ACTIVE_USER = "/user/active";
     public static final String REGISTER_CAMPANHA = "/campaign/create";
-    public static final String DELETE_CAMPANHA = "/campaign/remove";
-    public static final String DELETE_USER = "/user/remove";
+    public static final String DELETE_CAMPANHA = "/campaign/remove/";
+    public static final String DELETE_USER = "/user/remove/";
+    public static final String GET_CAMPANHA_PAGINADA = "/campaign/find";
+    public static final String GET_CAMPANHA_ALL = "/campaign/find/all";
+    public static final String GET_CAMPANHA_BY_MAIL = "/campaign/find/";
 }

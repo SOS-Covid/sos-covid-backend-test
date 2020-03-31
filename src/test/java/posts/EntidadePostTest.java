@@ -26,7 +26,7 @@ public class EntidadePostTest extends BaseTest {
                 statusCode(200);
 
         when().
-                delete(DELETE_USER + "/" + entidade.getEmail()).
+                delete(DELETE_USER + entidade.getEmail()).
                 then().log().all().
                 statusCode(204);
     }
