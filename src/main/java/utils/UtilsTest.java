@@ -17,7 +17,7 @@ public class UtilsTest {
 
     public static String getOrganizationEmail() {
         return when().
-                get(GET_ORGANIZACAO_ALL).
+                get(GET_ORGANIZACAO).
                 then().log().all().
                 statusCode(200).
                 extract().
