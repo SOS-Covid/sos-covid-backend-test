@@ -7,8 +7,7 @@ import org.testng.annotations.DataProvider;
 public class EntidadeDataProvider {
 
     @DataProvider(name = "Required-BlankFields")
-    public static Object[][] dataProviderRequiredBlankFields()
-    {
+    public static Object[][] dataProviderRequiredBlankFields() {
         EntidadeConstructor semEmail = EntidadeFactory.EntidadeOK();
         EntidadeConstructor emailInvalido = EntidadeFactory.EntidadeOK();
         EntidadeConstructor semPassword = EntidadeFactory.EntidadeOK();
@@ -29,25 +28,22 @@ public class EntidadeDataProvider {
         semTelefone.setPhone1("");
 
 
-        return new Object[][] { {semEmail}, {emailInvalido}, {semPassword}, {passwordInvalido}, {semType},
+        return new Object[][]{{semEmail}, {emailInvalido}, {semPassword}, {passwordInvalido}, {semType},
                 {typeInvalido}, {semCpf}, {cpfInvalido}, {semTelefone}};
     }
 
     @DataProvider(name = "semRequiredFields")
-    public static Object[][] dataProviderSemRequiredFields()
-    {
+    public static Object[][] dataProviderSemRequiredFields() {
         EntidadeConstructor semParamEmail = EntidadeFactory.EntidadeSemParamEmail();
         EntidadeConstructor semParamPassword = EntidadeFactory.EntidadeSemParamPassword();
         EntidadeConstructor semParamType = EntidadeFactory.EntidadeSemParamType();
         EntidadeConstructor semParamCpf = EntidadeFactory.EntidadeSemParamCpfCnpj();
 
-        return new Object[][] { {semParamEmail}, {semParamPassword}, {semParamType}, {semParamCpf} };
+        return new Object[][]{{semParamEmail}, {semParamPassword}, {semParamType}, {semParamCpf}};
     }
 
     @DataProvider(name = "OptionalFields")
-    public static Object[][] dataProviderOptionalFields()
-    {
-        EntidadeConstructor entidadeCompleta = EntidadeFactory.EntidadeOK();
+    public static Object[][] dataProviderOptionalFields() {
         EntidadeConstructor semParamSite = EntidadeFactory.EntidadeSemParamSite();
         EntidadeConstructor semParamInstaagram = EntidadeFactory.EntidadeSemParamInstagram();
         EntidadeConstructor semParamFacebook = EntidadeFactory.EntidadeSemParamFacebook();
@@ -64,10 +60,17 @@ public class EntidadeDataProvider {
         EntidadeConstructor semParamAcceptDonate = EntidadeFactory.EntidadeSemParamAcceptDonate();
 
 
-        return new Object[][] { {entidadeCompleta},
+        return new Object[][]{
                 {semParamSite}, {semParamInstaagram}, {semParamFacebook}, {semAddressIncompleto},
                 {semParamNameOrganization}, {semParamFirstName}, {semParamLastName}, {semParamGroupFinality},
                 {semParamAddress}, {semParamAcceptDonate}, {semParamHelpTypes},
-                {semParamServedRegion}, {semParamPaymentMethods}, {semParamDescription} };
+                {semParamServedRegion}, {semParamPaymentMethods}, {semParamDescription}};
+    }
+
+    @DataProvider(name = "Complete")
+    public static Object[][] dataProviderComplete() {
+        EntidadeConstructor entidadeCompleta = EntidadeFactory.EntidadeOK();
+
+        return new Object[][]{{entidadeCompleta}};
     }
 }

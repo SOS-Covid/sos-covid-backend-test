@@ -13,9 +13,27 @@ import static utils.RouteConstants.REGISTER_CAMPANHA;
 
 public class CampanhaPostTest extends BaseTest {
 
-    @Test(dataProvider = "OptionalFields", dataProviderClass = CampanhaDataProvider.class,
+    @Test(dataProvider = "Complete", dataProviderClass = CampanhaDataProvider.class,
             groups = {"funcional"})
     public static void cadastrarCampanhaOK(CampanhaConstructor campanha) {
+
+        given().
+                contentType(ContentType.JSON).
+                body(campanha).
+                when().
+                post(REGISTER_CAMPANHA).
+                then().log().all().
+                statusCode(200);
+
+        when().
+                delete(DELETE_CAMPANHA + campanha.getReference_user()).
+                then().log().all().
+                statusCode(204);
+    }
+
+    @Test(dataProvider = "OptionalFields", dataProviderClass = CampanhaDataProvider.class,
+            groups = {"funcional"})
+    public static void cadastrarCampanhaOptionalFields(CampanhaConstructor campanha) {
 
         given().
                 contentType(ContentType.JSON).

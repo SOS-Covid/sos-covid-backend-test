@@ -44,13 +44,19 @@ public class ContribuidorDataProvider {
 
     @DataProvider(name = "OptionalFields")
     public static Object[][] dataProviderOptionalFields() {
-        ContribuidorConstructor contribuidorOK = ContribuidorFactory.ContribuidorOK();
-        ContribuidorConstructor contribuidorMultiEnderecoOK = ContribuidorFactory.ContribuidorMultiEnderecosOK();
         ContribuidorConstructor SemParamFirstName = ContribuidorFactory.ContribuidorSemParamFirstName();
         ContribuidorConstructor SemParamLastName = ContribuidorFactory.ContribuidorSemParamLastName();
         ContribuidorConstructor enderecoInvalido = ContribuidorFactory.ContribuidorEnderecoInvalido();
 
-        return new Object[][]{{contribuidorOK}, {contribuidorMultiEnderecoOK}, {SemParamFirstName},
+        return new Object[][]{{SemParamFirstName},
                 {SemParamLastName}, {enderecoInvalido}};
+    }
+
+    @DataProvider(name = "Complete")
+    public static Object[][] dataProviderComplete() {
+        ContribuidorConstructor contribuidorOK = ContribuidorFactory.ContribuidorOK();
+        ContribuidorConstructor contribuidorMultiEnderecoOK = ContribuidorFactory.ContribuidorMultiEnderecosOK();
+
+        return new Object[][]{{contribuidorOK}, {contribuidorMultiEnderecoOK}};
     }
 }

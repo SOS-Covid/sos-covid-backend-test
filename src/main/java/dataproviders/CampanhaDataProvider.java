@@ -52,14 +52,19 @@ public class CampanhaDataProvider {
 
     @DataProvider(name = "OptionalFields")
     public static Object[][] dataProviderOptionalFields() {
-        CampanhaConstructor campanhaAtiva = CampanhaFactory.CampanhaAtivaOK();
-        CampanhaConstructor campanhaCancelada = CampanhaFactory.CampanhaCanceladaOK();
-        CampanhaConstructor campanhaFechada = CampanhaFactory.CampanhaFechadaOK();
         CampanhaConstructor semParamTypesDonation = CampanhaFactory.CampanhaSemParamTypeDonations();
         CampanhaConstructor semParamServedRegions = CampanhaFactory.CampanhaSemParamServedRegions();
         CampanhaConstructor semParamDonateChannels = CampanhaFactory.CampanhaSemParamDonateChannels();
 
-        return new Object[][]{{campanhaAtiva}, {campanhaCancelada}, {campanhaFechada},
-                {semParamTypesDonation}, {semParamServedRegions}, {semParamDonateChannels}};
+        return new Object[][]{{semParamTypesDonation}, {semParamServedRegions}, {semParamDonateChannels}};
+    }
+
+    @DataProvider(name = "Complete")
+    public static Object[][] dataProviderComplete() {
+        CampanhaConstructor campanhaAtiva = CampanhaFactory.CampanhaAtivaOK();
+        CampanhaConstructor campanhaCancelada = CampanhaFactory.CampanhaCanceladaOK();
+        CampanhaConstructor campanhaFechada = CampanhaFactory.CampanhaFechadaOK();
+
+        return new Object[][]{{campanhaAtiva}, {campanhaCancelada}, {campanhaFechada}};
     }
 }

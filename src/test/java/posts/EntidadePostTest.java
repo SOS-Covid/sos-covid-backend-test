@@ -13,9 +13,27 @@ import static utils.RouteConstants.REGISTER_USER;
 
 public class EntidadePostTest extends BaseTest {
 
-    @Test(dataProvider = "OptionalFields", dataProviderClass = EntidadeDataProvider.class,
+    @Test(dataProvider = "Complete", dataProviderClass = EntidadeDataProvider.class,
             groups = {"funcional"})
     public static void cadastrarEntidadeOK(EntidadeConstructor entidade) {
+
+        given().
+                contentType(ContentType.JSON).
+                body(entidade).
+                when().
+                post(REGISTER_USER).
+                then().log().all().
+                statusCode(200);
+
+        when().
+                delete(DELETE_USER + entidade.getEmail()).
+                then().log().all().
+                statusCode(204);
+    }
+
+    @Test(dataProvider = "OptionalFields", dataProviderClass = EntidadeDataProvider.class,
+            groups = {"funcional"})
+    public static void cadastrarEntidadeOptionalFields(EntidadeConstructor entidade) {
 
         given().
                 contentType(ContentType.JSON).
