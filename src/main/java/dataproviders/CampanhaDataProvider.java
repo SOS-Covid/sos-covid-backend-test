@@ -20,7 +20,6 @@ public class CampanhaDataProvider {
         CampanhaConstructor campaingNameVazio = CampanhaFactory.CampanhaAtivaOK();
         CampanhaConstructor referenceUserVazio = CampanhaFactory.CampanhaAtivaOK();
         CampanhaConstructor referenceUserInvalido = CampanhaFactory.CampanhaAtivaOK();
-        CampanhaConstructor referenceUserInexistente = CampanhaFactory.CampanhaAtivaOK();
         CampanhaConstructor descriptionVazio = CampanhaFactory.CampanhaAtivaOK();
         CampanhaConstructor assitedEntityVazio = CampanhaFactory.CampanhaAtivaOK();
         CampanhaConstructor stateVazio = CampanhaFactory.CampanhaAtivaOK();
@@ -32,7 +31,6 @@ public class CampanhaDataProvider {
         campaingNameVazio.setCampaign_name("");
         referenceUserVazio.setReference_user("");
         referenceUserInvalido.setReference_user("123");
-        referenceUserInexistente.setReference_user("bimba@bomba.com");
         descriptionVazio.setDescription("");
         assitedEntityVazio.setAssisted_entity("");
         stateVazio.setState("");
@@ -47,7 +45,7 @@ public class CampanhaDataProvider {
         return new Object[][]{{semParamCampaingName}, {semParamAssistedEntity}, {semParamCity}, {semParamDescription}, {semParamFinalDate},
                 {semParamInitialDate}, {semParamReferenceUser}, {semParamState}, {semParamStatus}, {campaingNameVazio}, {referenceUserVazio},
                 {referenceUserInvalido}, {descriptionVazio}, {assitedEntityVazio}, {stateVazio}, {cityVazio}, {initialDateVazio},
-                {finalDateVazio}, {statusVazio}, {statusInvalido}, {referenceUserInexistente}};
+                {finalDateVazio}, {statusVazio}, {statusInvalido}};
     }
 
     @DataProvider(name = "OptionalFields")
@@ -66,5 +64,13 @@ public class CampanhaDataProvider {
         CampanhaConstructor campanhaFechada = CampanhaFactory.CampanhaFechadaOK();
 
         return new Object[][]{{campanhaAtiva}, {campanhaCancelada}, {campanhaFechada}};
+    }
+
+    @DataProvider(name = "NotFound")
+    public static Object[][] dataProviderNotFound() {
+        CampanhaConstructor emailNotFound = CampanhaFactory.CampanhaAtivaOK();
+        emailNotFound.setReference_user("bimba@bimba.www.com");
+
+        return new Object[][]{{emailNotFound}};
     }
 }

@@ -2,6 +2,7 @@ package posts;
 
 import constructors.CampanhaConstructor;
 import dataproviders.CampanhaDataProvider;
+import factories.CampanhaFactory;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import utils.BaseTest;
@@ -60,5 +61,18 @@ public class CampanhaPostTest extends BaseTest {
                 post(REGISTER_CAMPANHA).
                 then().log().all().
                 statusCode(400);
+    }
+
+    @Test(dataProvider = "NotFound", dataProviderClass = CampanhaDataProvider.class,
+            groups = {"funcional"})
+    public static void cadastrarCampanhaDadosNotFound(CampanhaConstructor campanha) {
+
+        given().
+                contentType(ContentType.JSON).
+                body(campanha).
+                when().
+                post(REGISTER_CAMPANHA).
+                then().log().all().
+                statusCode(404);
     }
 }

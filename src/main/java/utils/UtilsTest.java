@@ -4,7 +4,6 @@ import java.util.Random;
 
 import static io.restassured.RestAssured.when;
 import static utils.RouteConstants.GET_ORGANIZACAO;
-import static utils.RouteConstants.GET_ORGANIZACAO_ALL;
 
 public class UtilsTest {
 
