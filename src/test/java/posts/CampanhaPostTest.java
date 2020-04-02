@@ -2,7 +2,6 @@ package posts;
 
 import constructors.CampanhaConstructor;
 import dataproviders.CampanhaDataProvider;
-import factories.CampanhaFactory;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import utils.BaseTest;
