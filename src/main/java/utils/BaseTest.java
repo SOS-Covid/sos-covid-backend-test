@@ -2,10 +2,9 @@ package utils;
 
 import com.aventstack.extentreports.ExtentTest;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
-import utils.ExtentReports.MyTestListener;
+import utils.ExtentReports.TestListener;
 import utils.ExtentReports.ReportHelper;
 
 import java.io.IOException;
@@ -15,7 +14,7 @@ import static io.restassured.RestAssured.enableLoggingOfRequestAndResponseIfVali
 import static utils.ExtentReports.ReportHelper.configureReport;
 import static utils.RouteConstants.URL;
 
-@Listeners(MyTestListener.class)
+@Listeners(TestListener.class)
 public class BaseTest {
 
     private static ExtentTest extentTest;

@@ -13,9 +13,9 @@ on:
     - cron: '0 */2 * * *'
 
 jobs:
+  runs-on: ubuntu-latest
   build:
     name: Build
-    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -29,7 +29,6 @@ jobs:
   test:
     name: Test
     needs: build
-    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2

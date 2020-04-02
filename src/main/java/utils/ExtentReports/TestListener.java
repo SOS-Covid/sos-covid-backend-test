@@ -10,7 +10,7 @@ import utils.BaseTest;
 
 import static utils.ExtentReports.ReportHelper.configureReport;
 
-public class MyTestListener implements ITestListener {
+public class TestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
@@ -19,17 +19,17 @@ public class MyTestListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        ExtentTestManager.getTest(result).pass("Test Passed");
+        ExtentTestManager.getTest(result).pass("Passou gurizadaaa!!");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        ExtentTestManager.getTest(result).fail(result.getThrowable());
+        ExtentTestManager.getTest(result).fail("Deu ruimmm cambadaaa... \n" + result.getThrowable());
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        ExtentTestManager.getTest(result).skip("Test Skiped");
+        ExtentTestManager.getTest(result).skip("Pulouuu.. deu alguma zica...");
     }
 
     @Override

@@ -30,14 +30,14 @@ public class ReportHelper {
         if(!reportFolder.exists())
             reportFolder.mkdir();
 
-        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(TARGET_EXTENT_REPORT+"/report.html");
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(TARGET_EXTENT_REPORT+"/report-backend-test.html");
         htmlReporter.config().setAutoCreateRelativePathMedia(true);
         htmlReporter.config().setCSS("css-string");
         htmlReporter.config().setDocumentTitle("Report-BackEnd-Test");
         htmlReporter.config().setEncoding(UTF_8);
         htmlReporter.config().setJS("js-string");
         htmlReporter.config().setProtocol(Protocol.HTTPS);
-        htmlReporter.config().setReportName("Reporte Test BackEnd - Cooperação Solidária");
+        htmlReporter.config().setReportName("Report Cooperação Solidária - BackEnd Test");
         htmlReporter.config().setTheme(Theme.DARK);
         htmlReporter.config().setTimeStampFormat("MMM dd, yyyy HH:mm:ss");
 
