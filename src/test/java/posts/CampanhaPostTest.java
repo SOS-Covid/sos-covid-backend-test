@@ -31,6 +31,32 @@ public class CampanhaPostTest extends BaseTest {
                 statusCode(204);
     }
 
+    @Test(dataProvider = "Complete", dataProviderClass = CampanhaDataProvider.class,
+            groups = {"funcional"})
+    public static void cadastrarDuasCampanhasMesmaEntidadeOK(CampanhaConstructor campanha) {
+
+        given().
+                contentType(ContentType.JSON).
+                body(campanha).
+                when().
+                post(REGISTER_CAMPANHA).
+                then().log().all().
+                statusCode(200);
+
+        given().
+                contentType(ContentType.JSON).
+                body(campanha).
+                when().
+                post(REGISTER_CAMPANHA).
+                then().log().all().
+                statusCode(200);
+
+        when().
+                delete(DELETE_CAMPANHA + campanha.getReference_user()).
+                then().log().all().
+                statusCode(204);
+    }
+
     @Test(dataProvider = "OptionalFields", dataProviderClass = CampanhaDataProvider.class,
             groups = {"funcional"})
     public static void cadastrarCampanhaOptionalFields(CampanhaConstructor campanha) {
