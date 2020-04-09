@@ -7,4 +7,7 @@ public class UtilConstants {
     public static final String ENTIDADE = "ORGANIZATION";
     public static final String ESTABELECIMENTO = "MARKET";
 
+    // IMAGE RESOURCES
+    public static final String IMAGE_USER = System.getProperty("user.dir") + "\\src\\main\\resources\\imageUser.png";
+
 }

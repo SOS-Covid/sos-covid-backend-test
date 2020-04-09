@@ -9,8 +9,8 @@ on:
   pull_request:
     branches:
       - master
-#  schedule:
-#    - cron: '0 */2 * * *'
+  schedule:
+    - cron: '0 */8 * * *'
 
 jobs:
   build:
@@ -40,6 +40,7 @@ jobs:
       - name: Test with Maven
         run: mvn test
       - name: Test Report Generate
+        if: always()
         uses: actions/upload-artifact@v1
         with:
           name: test-report
