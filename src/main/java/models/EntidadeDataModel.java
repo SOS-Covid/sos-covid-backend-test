@@ -33,6 +33,9 @@ public class EntidadeDataModel {
     private String registredAt;
     private String lastAcess;
     private String group_finality;
+    private String phone2;
+    private String cpf_responsible;
+    private String image;
     private int goal;
     private int v;
 }
