@@ -1,7 +1,10 @@
 package constructors;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
@@ -10,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ContribuidorConstructor {
+public class UserConstructor {
 
     private String email;
     private String password;
@@ -19,6 +22,5 @@ public class ContribuidorConstructor {
     private String type;
     private String first_name;
     private String last_name;
-    private List<EnderecoConstructor> address;
 }
 

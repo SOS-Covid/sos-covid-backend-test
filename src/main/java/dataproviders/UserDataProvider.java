@@ -1,30 +1,29 @@
 package dataproviders;
 
-import constructors.ContribuidorConstructor;
-import factories.ContribuidorFactory;
+import constructors.UserConstructor;
+import factories.UserFactory;
 import org.testng.annotations.DataProvider;
 
-public class ContribuidorDataProvider {
+public class UserDataProvider {
 
     @DataProvider(name = "Required-BlankFields")
     public static Object[][] dataProviderRequiredBlankFields() {
-        ContribuidorConstructor semParamEmail = ContribuidorFactory.ContribuidorSemParamEmail();
-        ContribuidorConstructor semParamPassword = ContribuidorFactory.ContribuidorSemParamPassword();
-        ContribuidorConstructor semParamType = ContribuidorFactory.ContribuidorSemParamType();
-        ContribuidorConstructor semParamCpfCnpj = ContribuidorFactory.ContribuidorSemParamCpfCnpj();
-        ContribuidorConstructor semParamPhone1 = ContribuidorFactory.ContribuidorSemParamPhone1();
-        ContribuidorConstructor statusAtivo = ContribuidorFactory.ContribuidorStatusAtivo();
-        ContribuidorConstructor semEmail = ContribuidorFactory.ContribuidorOK();
-        ContribuidorConstructor emailInvalido = ContribuidorFactory.ContribuidorOK();
-        ContribuidorConstructor semPassword = ContribuidorFactory.ContribuidorOK();
-        ContribuidorConstructor passwordInvalido = ContribuidorFactory.ContribuidorOK();
-        ContribuidorConstructor semType = ContribuidorFactory.ContribuidorOK();
-        ContribuidorConstructor typeInvalido = ContribuidorFactory.ContribuidorOK();
-        ContribuidorConstructor semCpf = ContribuidorFactory.ContribuidorOK();
-        ContribuidorConstructor cpfInvalido = ContribuidorFactory.ContribuidorOK();
-        ContribuidorConstructor semTelefone = ContribuidorFactory.ContribuidorOK();
-        ContribuidorConstructor firstNameInvalido = ContribuidorFactory.ContribuidorOK();
-        ContribuidorConstructor lastNameInvalido = ContribuidorFactory.ContribuidorOK();
+        UserConstructor semParamEmail = UserFactory.userSemParamEmail();
+        UserConstructor semParamPassword = UserFactory.userSemParamPassword();
+        UserConstructor semParamType = UserFactory.userSemParamType();
+        UserConstructor semParamCpfCnpj = UserFactory.userSemParamCpfCnpj();
+        UserConstructor semParamPhone1 = UserFactory.userSemParamPhone1();
+        UserConstructor semEmail = UserFactory.userOK();
+        UserConstructor emailInvalido = UserFactory.userOK();
+        UserConstructor semPassword = UserFactory.userOK();
+        UserConstructor passwordInvalido = UserFactory.userOK();
+        UserConstructor semType = UserFactory.userOK();
+        UserConstructor typeInvalido = UserFactory.userOK();
+        UserConstructor semCpf = UserFactory.userOK();
+        UserConstructor cpfInvalido = UserFactory.userOK();
+        UserConstructor semTelefone = UserFactory.userOK();
+        UserConstructor firstNameInvalido = UserFactory.userOK();
+        UserConstructor lastNameInvalido = UserFactory.userOK();
         semEmail.setEmail("");
         emailInvalido.setEmail("teste");
         semPassword.setPassword("");
@@ -39,24 +38,21 @@ public class ContribuidorDataProvider {
 
         return new Object[][]{{semEmail}, {emailInvalido}, {semPassword}, {passwordInvalido}, {semType},
                 {typeInvalido}, {semCpf}, {cpfInvalido}, {semTelefone}, {firstNameInvalido}, {lastNameInvalido},
-                {semParamEmail}, {semParamPassword}, {semParamType}, {semParamCpfCnpj}, {semParamPhone1}, {statusAtivo}};
+                {semParamEmail}, {semParamPassword}, {semParamType}, {semParamCpfCnpj}, {semParamPhone1}};
     }
 
     @DataProvider(name = "OptionalFields")
     public static Object[][] dataProviderOptionalFields() {
-        ContribuidorConstructor SemParamFirstName = ContribuidorFactory.ContribuidorSemParamFirstName();
-        ContribuidorConstructor SemParamLastName = ContribuidorFactory.ContribuidorSemParamLastName();
-        ContribuidorConstructor enderecoInvalido = ContribuidorFactory.ContribuidorEnderecoInvalido();
+        UserConstructor SemParamFirstName = UserFactory.userSemParamFirstName();
+        UserConstructor SemParamLastName = UserFactory.userSemParamLastName();
 
-        return new Object[][]{{SemParamFirstName},
-                {SemParamLastName}, {enderecoInvalido}};
+        return new Object[][]{{SemParamFirstName}, {SemParamLastName}};
     }
 
     @DataProvider(name = "Complete")
     public static Object[][] dataProviderComplete() {
-        ContribuidorConstructor contribuidorOK = ContribuidorFactory.ContribuidorOK();
-        ContribuidorConstructor contribuidorMultiEnderecoOK = ContribuidorFactory.ContribuidorMultiEnderecosOK();
+        UserConstructor userOK = UserFactory.userOK();
 
-        return new Object[][]{{contribuidorOK}, {contribuidorMultiEnderecoOK}};
+        return new Object[][]{{userOK}};
     }
 }
