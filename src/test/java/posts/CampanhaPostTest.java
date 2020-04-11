@@ -13,8 +13,8 @@ import static utils.RouteConstants.REGISTER_CAMPANHA;
 
 public class CampanhaPostTest extends BaseTest {
 
-//    @Test(dataProvider = "Complete", dataProviderClass = CampanhaDataProvider.class,
-//            groups = {"funcional"})
+    @Test(dataProvider = "Complete", dataProviderClass = CampanhaDataProvider.class,
+            groups = {"funcional"})
     public static void cadastrarCampanhaOK(CampanhaConstructor campanha) {
 
         given().
@@ -31,8 +31,8 @@ public class CampanhaPostTest extends BaseTest {
                 statusCode(204);
     }
 
-//    @Test(dataProvider = "Complete", dataProviderClass = CampanhaDataProvider.class,
-//            groups = {"funcional"})
+    @Test(dataProvider = "Complete", dataProviderClass = CampanhaDataProvider.class,
+            groups = {"funcional"})
     public static void cadastrarDuasCampanhasMesmaEntidadeOK(CampanhaConstructor campanha) {
 
         given().
@@ -51,14 +51,14 @@ public class CampanhaPostTest extends BaseTest {
                 then().log().all().
                 statusCode(200);
 
-        when().
-                delete(DELETE_CAMPANHA + campanha.getReference_user()).
-                then().log().all().
-                statusCode(204);
+//        when().
+//                delete(DELETE_CAMPANHA + campanha.getReference_user()).
+//                then().log().all().
+//                statusCode(204);
     }
 
-//    @Test(dataProvider = "OptionalFields", dataProviderClass = CampanhaDataProvider.class,
-//            groups = {"funcional"})
+    @Test(dataProvider = "OptionalFields", dataProviderClass = CampanhaDataProvider.class,
+            groups = {"funcional"})
     public static void cadastrarCampanhaOptionalFields(CampanhaConstructor campanha) {
 
         given().
@@ -75,8 +75,8 @@ public class CampanhaPostTest extends BaseTest {
                 statusCode(204);
     }
 
-//    @Test(dataProvider = "Required-BlankFields", dataProviderClass = CampanhaDataProvider.class,
-//            groups = {"funcional"})
+    @Test(dataProvider = "Required-BlankFields", dataProviderClass = CampanhaDataProvider.class,
+            groups = {"funcional"})
     public static void validarCamposObrigatoriosVazio(CampanhaConstructor campanha) {
 
         given().
@@ -88,8 +88,8 @@ public class CampanhaPostTest extends BaseTest {
                 statusCode(400);
     }
 
-//    @Test(dataProvider = "NotFound", dataProviderClass = CampanhaDataProvider.class,
-//            groups = {"funcional"})
+    @Test(dataProvider = "NotFound", dataProviderClass = CampanhaDataProvider.class,
+            groups = {"funcional"})
     public static void cadastrarCampanhaDadosNotFound(CampanhaConstructor campanha) {
 
         given().

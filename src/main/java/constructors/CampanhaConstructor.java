@@ -28,5 +28,7 @@ public class CampanhaConstructor {
     private String final_date;
     private List<String> donate_channels;
     private String status;
+    private String collect;
+    private String collect_spot;
 }
 

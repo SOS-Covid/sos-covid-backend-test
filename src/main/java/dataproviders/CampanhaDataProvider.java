@@ -53,8 +53,10 @@ public class CampanhaDataProvider {
         CampanhaConstructor semParamTypesDonation = CampanhaFactory.CampanhaSemParamTypeDonations();
         CampanhaConstructor semParamServedRegions = CampanhaFactory.CampanhaSemParamServedRegions();
         CampanhaConstructor semParamDonateChannels = CampanhaFactory.CampanhaSemParamDonateChannels();
+        CampanhaConstructor semParamCollect = CampanhaFactory.CampanhaSemParamCollect();
+        CampanhaConstructor semParamCollectSpot = CampanhaFactory.CampanhaSemParamCollectSpot();
 
-        return new Object[][]{{semParamTypesDonation}, {semParamServedRegions}, {semParamDonateChannels}};
+        return new Object[][]{{semParamTypesDonation}, {semParamServedRegions}, {semParamDonateChannels}, {semParamCollect}, {semParamCollectSpot}};
     }
 
     @DataProvider(name = "Complete")
@@ -62,8 +64,9 @@ public class CampanhaDataProvider {
         CampanhaConstructor campanhaAtiva = CampanhaFactory.CampanhaAtivaOK();
         CampanhaConstructor campanhaCancelada = CampanhaFactory.CampanhaCanceladaOK();
         CampanhaConstructor campanhaFechada = CampanhaFactory.CampanhaFechadaOK();
+        CampanhaConstructor campanhaAtivaCollectFalse = CampanhaFactory.CampanhaAtivaCollectFalseOK();
 
-        return new Object[][]{{campanhaAtiva}, {campanhaCancelada}, {campanhaFechada}};
+        return new Object[][]{{campanhaAtiva}, {campanhaCancelada}, {campanhaFechada}, {campanhaAtivaCollectFalse}};
     }
 
     @DataProvider(name = "NotFound")
