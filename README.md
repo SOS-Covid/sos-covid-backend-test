@@ -19,6 +19,7 @@ Este é um movimento de pessoas para pessoas! Colabore e nos ajude a potencializ
 - [Rest Assured](https://github.com/rest-assured/rest-assured/wiki/GettingStarted)
 - [TestNG](https://testng.org/doc/documentation-main.html)
 - [Extent Reports](https://extentreports.com/documentation/)
+- [Java Faker](http://dius.github.io/java-faker/)
 
 ## Estrutura do Projeto :package: 
 
