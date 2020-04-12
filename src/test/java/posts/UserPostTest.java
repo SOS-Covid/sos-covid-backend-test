@@ -61,17 +61,4 @@ public class UserPostTest extends BaseTest {
                 then().log().all().
                 statusCode(400);
     }
-
-    @Test(dataProvider = "semRequiredFields", dataProviderClass = UserDataProvider.class,
-            groups = {"funcional"})
-    public static void validarCamposObrigatorios(UserConstructor user) {
-
-        given().
-                contentType(ContentType.JSON).
-                body(user).
-                when().
-                post(REGISTER_USER).
-                then().log().all().
-                statusCode(400);
-    }
 }
