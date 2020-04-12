@@ -12,6 +12,7 @@ import java.util.List;
 public class MetodoPagamentoConstructor {
     private String paypal;
     private String recebeaqui;
-    private String getnet;
-    private String sicredi;
+    private String pagseguro;
+    private String mercadopago;
+    private String vakinhaonline;
 }
