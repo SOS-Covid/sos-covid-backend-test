@@ -1,5 +1,6 @@
 package factories;
 
+import com.github.javafaker.Faker;
 import constructors.CampanhaConstructor;
 
 import java.text.DateFormat;
@@ -11,6 +12,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import static utils.UtilConstants.EN_US;
 import static utils.UtilsTest.getOrganizationEmail;
 
 public class CampanhaFactory {
@@ -18,6 +20,7 @@ public class CampanhaFactory {
     private static DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
     private static String organizationMail;
+    private static Faker generate = new Faker(EN_US);
     private static List<String> listServedRegion = Arrays.asList("Region 1", "Region 2");
     private static List<String> listDonations = Arrays.asList("Alcool", "Cesta Basica", "Leito");
     private static List<String> listCanais = Arrays.asList("Canal 1", "Canal 2", "Canal 3");
@@ -28,9 +31,9 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("Medicos").
                 type_donations(listDonations).
                 state("RS").
@@ -39,6 +42,8 @@ public class CampanhaFactory {
                 initial_date(dataInicial).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
                 build();
     }
@@ -47,9 +52,9 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("Medicos").
                 type_donations(listDonations).
                 state("RS").
@@ -58,6 +63,8 @@ public class CampanhaFactory {
                 initial_date(dataInicial).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("CLOSED").
                 build();
     }
@@ -66,9 +73,9 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("Medicos").
                 type_donations(listDonations).
                 state("RS").
@@ -77,6 +84,8 @@ public class CampanhaFactory {
                 initial_date(dataInicial).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("CANCELED").
                 build();
     }
@@ -86,7 +95,7 @@ public class CampanhaFactory {
 
         return CampanhaConstructor.builder().
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("Medicos").
                 type_donations(listDonations).
                 state("RS").
@@ -95,6 +104,8 @@ public class CampanhaFactory {
                 initial_date(dataInicial).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
                 build();
     }
@@ -102,8 +113,8 @@ public class CampanhaFactory {
     public static CampanhaConstructor CampanhaSemParamReferenceUser() {
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
-                description("Descrição 1234567").
+                campaign_name(generate.book().title()).
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("Medicos").
                 type_donations(listDonations).
                 state("RS").
@@ -112,6 +123,8 @@ public class CampanhaFactory {
                 initial_date(dataInicial).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
                 build();
     }
@@ -120,7 +133,7 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
                 assisted_entity("Medicos").
                 type_donations(listDonations).
@@ -130,6 +143,8 @@ public class CampanhaFactory {
                 initial_date(dataInicial).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
                 build();
     }
@@ -138,9 +153,9 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 type_donations(listDonations).
                 state("RS").
                 city("Porto Alegre").
@@ -148,6 +163,8 @@ public class CampanhaFactory {
                 initial_date(dataInicial).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
                 build();
     }
@@ -156,9 +173,9 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("029234344334").
                 state("RS").
                 city("Porto Alegre").
@@ -166,6 +183,8 @@ public class CampanhaFactory {
                 initial_date(dataInicial).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
                 build();
     }
@@ -174,9 +193,9 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("029234344334").
                 type_donations(listDonations).
                 city("Porto Alegre").
@@ -184,6 +203,8 @@ public class CampanhaFactory {
                 initial_date(dataInicial).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
                 build();
     }
@@ -192,9 +213,9 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("029234344334").
                 type_donations(listDonations).
                 state("RS").
@@ -202,6 +223,8 @@ public class CampanhaFactory {
                 initial_date(dataInicial).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
                 build();
     }
@@ -210,9 +233,9 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("029234344334").
                 type_donations(listDonations).
                 state("RS").
@@ -220,6 +243,8 @@ public class CampanhaFactory {
                 initial_date(dataInicial).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
                 build();
     }
@@ -228,9 +253,9 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("029234344334").
                 type_donations(listDonations).
                 state("RS").
@@ -238,6 +263,8 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
                 build();
     }
@@ -246,9 +273,9 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("029234344334").
                 type_donations(listDonations).
                 state("RS").
@@ -256,6 +283,8 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
                 build();
     }
@@ -264,9 +293,9 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("029234344334").
                 type_donations(listDonations).
                 state("RS").
@@ -282,9 +311,9 @@ public class CampanhaFactory {
         organizationMail = getOrganizationEmail();
 
         return CampanhaConstructor.builder().
-                campaign_name("Campanha Teste 1").
+                campaign_name(generate.book().title()).
                 reference_user(organizationMail).
-                description("Descrição 1234567").
+                description(generate.backToTheFuture().quote()).
                 assisted_entity("029234344334").
                 type_donations(listDonations).
                 state("RS").
@@ -293,6 +322,69 @@ public class CampanhaFactory {
                 initial_date(dataInicial).
                 final_date(dataFinal).
                 donate_channels(listCanais).
+                collect("true").
+                collect_spot(generate.address().fullAddress()).
+                build();
+    }
+
+    public static CampanhaConstructor CampanhaAtivaCollectFalseOK() {
+        organizationMail = getOrganizationEmail();
+
+        return CampanhaConstructor.builder().
+                campaign_name(generate.book().title()).
+                reference_user(organizationMail).
+                description(generate.backToTheFuture().quote()).
+                assisted_entity("Medicos").
+                type_donations(listDonations).
+                state("RS").
+                city("Porto Alegre").
+                served_region(listServedRegion).
+                initial_date(dataInicial).
+                final_date(dataFinal).
+                donate_channels(listCanais).
+                collect("false").
+                collect_spot(generate.address().fullAddress()).
+                status("ACTIVE").
+                build();
+    }
+
+    public static CampanhaConstructor CampanhaSemParamCollect() {
+        organizationMail = getOrganizationEmail();
+
+        return CampanhaConstructor.builder().
+                campaign_name(generate.book().title()).
+                reference_user(organizationMail).
+                description(generate.backToTheFuture().quote()).
+                assisted_entity("Medicos").
+                type_donations(listDonations).
+                state("RS").
+                city("Porto Alegre").
+                served_region(listServedRegion).
+                initial_date(dataInicial).
+                final_date(dataFinal).
+                donate_channels(listCanais).
+                collect_spot(generate.address().fullAddress()).
+                status("ACTIVE").
+                build();
+    }
+
+    public static CampanhaConstructor CampanhaSemParamCollectSpot() {
+        organizationMail = getOrganizationEmail();
+
+        return CampanhaConstructor.builder().
+                campaign_name(generate.book().title()).
+                reference_user(organizationMail).
+                description(generate.backToTheFuture().quote()).
+                assisted_entity("Medicos").
+                type_donations(listDonations).
+                state("RS").
+                city("Porto Alegre").
+                served_region(listServedRegion).
+                initial_date(dataInicial).
+                final_date(dataFinal).
+                donate_channels(listCanais).
+                collect("true").
+                status("ACTIVE").
                 build();
     }
 }

@@ -1,5 +1,6 @@
 package utils;
 
+import com.github.javafaker.Faker;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
 
@@ -9,20 +10,27 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.util.Random;
 
 import static io.restassured.RestAssured.when;
 import static utils.RouteConstants.GET_ORGANIZACAO;
+import static utils.UtilConstants.EN_US;
 
 public class UtilsTest {
 
-    public static String generateValidEmail() {
-        Random r = new Random();
-        int x = r.nextInt();
+    private static Faker generate = new Faker(EN_US);
 
-        return "teste" + Integer.toString(x) + "@teste.com";
+    /**
+     * Gera um email aleatório via Java Faker
+     * @return String email
+     */
+    public static String generateValidEmail() {
+        return generate.internet().emailAddress();
     }
 
+    /**
+     * Obtem um email valido para criação de uma campanha
+     * @return String email
+     */
     public static String getOrganizationEmail() {
         return when().
                 get(GET_ORGANIZACAO).
@@ -34,8 +42,7 @@ public class UtilsTest {
 
     /**
      * Tira um print da tela e retorna em formato Base64.
-     *
-     * @return String
+     * @return String encodeBase64
      */
     public static String encondeImageBase64(String imagePath) throws IOException {
 
@@ -47,8 +54,7 @@ public class UtilsTest {
 
     /**
      * Tira um print da tela e retorna em formato Base64.
-     *
-     * @return String
+     * @return String imageEncodedBase64
      */
     public static String captureScreenShotBase64() {
 
