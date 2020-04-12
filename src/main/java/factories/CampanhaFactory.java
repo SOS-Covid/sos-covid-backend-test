@@ -2,6 +2,7 @@ package factories;
 
 import com.github.javafaker.Faker;
 import constructors.CampanhaConstructor;
+import constructors.MetodoPagamentoConstructor;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -23,9 +24,10 @@ public class CampanhaFactory {
     private static Faker generate = new Faker(EN_US);
     private static List<String> listServedRegion = Arrays.asList("Region 1", "Region 2");
     private static List<String> listDonations = Arrays.asList("Alcool", "Cesta Basica", "Leito");
-    private static List<String> listCanais = Arrays.asList("Canal 1", "Canal 2", "Canal 3");
     private static String dataInicial = LocalDate.now().plusDays(5).format(formatDate);
     private static String dataFinal = LocalDate.now().plusMonths(2).format(formatDate);
+
+    private static MetodoPagamentoConstructor metodoPagamento = MetodoPagamentoFactory.PagtoMetodoOK();
 
     public static CampanhaConstructor CampanhaAtivaOK() {
         organizationMail = getOrganizationEmail();
@@ -41,7 +43,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
@@ -62,7 +64,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("CLOSED").
@@ -83,7 +85,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("CANCELED").
@@ -103,7 +105,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
@@ -122,7 +124,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
@@ -142,7 +144,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
@@ -162,7 +164,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
@@ -182,7 +184,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
@@ -202,7 +204,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
@@ -222,7 +224,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
@@ -242,7 +244,7 @@ public class CampanhaFactory {
                 city("Porto Alegre").
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
@@ -262,7 +264,7 @@ public class CampanhaFactory {
                 city("Porto Alegre").
                 served_region(listServedRegion).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
@@ -282,7 +284,7 @@ public class CampanhaFactory {
                 city("Porto Alegre").
                 served_region(listServedRegion).
                 initial_date(dataInicial).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
@@ -321,7 +323,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 collect_spot(generate.address().fullAddress()).
                 build();
@@ -341,7 +343,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("false").
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
@@ -362,7 +364,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect_spot(generate.address().fullAddress()).
                 status("ACTIVE").
                 build();
@@ -382,7 +384,7 @@ public class CampanhaFactory {
                 served_region(listServedRegion).
                 initial_date(dataInicial).
                 final_date(dataFinal).
-                donate_channels(listCanais).
+                donate_channels(Arrays.asList(metodoPagamento)).
                 collect("true").
                 status("ACTIVE").
                 build();
