@@ -1,5 +1,6 @@
 package factories;
 
+import com.github.javafaker.Faker;
 import constructors.AssistenciadoConstructor;
 import constructors.EnderecoConstructor;
 import constructors.EntidadeConstructor;
@@ -10,14 +11,15 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-import static utils.UtilConstants.ENTIDADE;
-import static utils.UtilConstants.IMAGE_USER;
+import static utils.UtilConstants.*;
 import static utils.UtilsTest.encondeImageBase64;
 import static utils.UtilsTest.generateValidEmail;
 
 public class EntidadeFactory {
 
     private static String validEmail, image;
+    private static Faker generate = new Faker(EN_US);
+
     private static List<String> listHelpTypes = Arrays.asList("Help1", "Help2");
     private static List<String> listServedRegion = Arrays.asList("Region 1", "Region 2");
 
@@ -34,19 +36,19 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -63,20 +65,20 @@ public class EntidadeFactory {
         return EntidadeConstructor.builder().
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -93,20 +95,20 @@ public class EntidadeFactory {
         return EntidadeConstructor.builder().
                 email(validEmail).
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -124,19 +126,19 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -154,19 +156,19 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -184,19 +186,19 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -213,20 +215,20 @@ public class EntidadeFactory {
         return EntidadeConstructor.builder().
                 email(validEmail).
                 password("teste123").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -244,19 +246,19 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone2("51 99999999").
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -274,19 +276,19 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -304,19 +306,19 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -334,19 +336,19 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -364,19 +366,19 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -394,20 +396,20 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -424,19 +426,19 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -454,20 +456,20 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -486,20 +488,20 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -517,20 +519,20 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
@@ -547,20 +549,20 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 payment_methods(Arrays.asList(metodoPagamento)).
                 address(Arrays.asList(endereco)).
@@ -577,20 +579,20 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                description("É uma entidade que ajuda as pessoas com aquilo que elas precisam").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                description(generate.backToTheFuture().quote()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 address(Arrays.asList(endereco)).
@@ -607,19 +609,19 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -636,18 +638,18 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -665,18 +667,18 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
-                phone2("51 99999999").
+                phone1(generate.phoneNumber().phoneNumber()).
+                phone2(generate.phoneNumber().phoneNumber()).
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
@@ -694,18 +696,18 @@ public class EntidadeFactory {
                 email(validEmail).
                 password("teste123").
                 cpf_cnpj("63027026000143").
-                phone1("51 33333333").
+                phone1(generate.phoneNumber().phoneNumber()).
                 cpf_responsible("12327026000000").
                 image(image).
                 type(ENTIDADE).
-                site("wwww.google.com").
-                instagram("wwww.google.com").
-                facebook("wwww.google.com").
-                name_organization("Entidade Teste").
-                first_name("Teste A").
-                last_name("Teste B").
-                group_finality("Teste").
-                goal(20).
+                site(generate.internet().url()).
+                instagram(generate.internet().url()).
+                facebook(generate.internet().url()).
+                name_organization(generate.company().name()).
+                first_name(generate.name().firstName()).
+                last_name(generate.name().lastName()).
+                group_finality(generate.harryPotter().house()).
+                goal(generate.number().randomDigitNotZero()).
                 help_types(listHelpTypes).
                 served_region(listServedRegion).
                 payment_methods(Arrays.asList(metodoPagamento)).
